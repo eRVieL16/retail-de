@@ -1,0 +1,47 @@
+# Credentials & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.user.yml
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# dbt
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+dbt/package-lock.yml.bak
+dbt_packages/
+dbt/
+# Databricks / local data artifacts
+bronze_storage/
+*.parquet
+*.delta/
+spark-warehouse/
+metastore_db/
+derby.log
+ENTERPRISE_PLATFORM_G
+Notebooks/
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Jupyter
+.ipynb_checkpoints/
+setu awal.ipynb
+
+# OTHERS
+logs/
+materi-belajar-databricks-mid.md
+PROGRESS.m
+docs_decision_template.md
