@@ -5,6 +5,8 @@
 *.pem
 *.key
 .user.yml
+
+profiles.yml
 # Python
 .venv/
 venv/
@@ -20,6 +22,7 @@ dbt/dbt_packages/
 dbt/package-lock.yml.bak
 dbt_packages/
 dbt/
+models/
 # Databricks / local data artifacts
 bronze_storage/
 *.parquet
@@ -27,8 +30,7 @@ bronze_storage/
 spark-warehouse/
 metastore_db/
 derby.log
-ENTERPRISE_PLATFORM_G
-Notebooks/
+ENTERPRISE_PLATFORM_GOAL.md
 # OS / editor
 .DS_Store
 Thumbs.db
