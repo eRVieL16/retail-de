@@ -6,7 +6,6 @@
 *.key
 .user.yml
 
-profiles.yml
 # Python
 .venv/
 venv/
@@ -19,9 +18,7 @@ __pycache__/
 dbt/target/
 dbt/logs/
 dbt/dbt_packages/
-dbt/package-lock.yml.bak
 dbt_packages/
-dbt/
 models/
 # Databricks / local data artifacts
 bronze_storage/

@@ -1,0 +1,24 @@
+# dbt_project.yml
+name: 'retail_de_mid'
+version: '1.0.0'
+config-version: 2
+
+profile: 'retail_de_mid'   # harus match nama profile di profiles.yml
+
+model-paths: ["dbt/models"]
+seed-paths: ["dbt/seeds"]
+test-paths: ["dbt/tests"]
+macro-paths: ["dbt/macros"]
+
+models:
+  retail_de_mid:
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+    marts:
+      sales:
+        +materialized: table
+        +schema: sales
+      inventory:
+        +materialized: table
+        +schema: inventory
