@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: mart_sales_performance
+    description: >
+      Mart konsumen untuk analisis performa penjualan per toko per hari.
+    columns:
+      - name: store_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('int_store_daily_summary')
+                field: store_id
+      - name: summary_date
+        tests:
+          - not_null
+      - name: total_revenue
+        description: Total pendapatan harian per toko
+      - name: avg_revenue_per_transaction
+        description: Rata-rata pendapatan per transaksi

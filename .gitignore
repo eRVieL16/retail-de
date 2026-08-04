@@ -19,7 +19,6 @@ dbt/target/
 dbt/logs/
 dbt/dbt_packages/
 dbt_packages/
-models/
 # Databricks / local data artifacts
 bronze_storage/
 *.parquet

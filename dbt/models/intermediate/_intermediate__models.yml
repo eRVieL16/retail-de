@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: int_store_daily_summary
+    description: >
+      Konsolidasi harian per toko dari domain sales dan inventory.
+      Inner join terhadap products untuk exclude 4 produk orphan
+      (lihat docs/decisions/DECISIONS.md - Referential Integrity).
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - store_id
+              - summary_date
+    columns:
+      - name: store_id
+        description: ID toko
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: source('silver', 'stg_stores')
+                field: store_id
+      - name: summary_date
+        description: Tanggal ringkasan (gabungan tanggal transaksi dan snapshot inventory)
+        tests:
+          - not_null
+      - name: transaction_count
+        description: Jumlah transaksi unik pada tanggal tersebut
+      - name: total_revenue
+        description: Total pendapatan pada tanggal tersebut
+      - name: total_stock_qty
+        description: Total stok tersedia pada tanggal tersebut
+      - name: backorder_anomaly_count
+        description: Jumlah baris inventory dengan flag is_backorder_anomaly

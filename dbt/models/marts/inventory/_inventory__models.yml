@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: mart_inventory_status
+    description: >
+      Mart konsumen untuk monitoring status stok dan potensi backorder per toko per hari.
+    columns:
+      - name: store_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('int_store_daily_summary')
+                field: store_id
+      - name: summary_date
+        tests:
+          - not_null
+      - name: needs_restock_attention
+        description: Flag toko yang punya minimal 1 produk dengan stok rendah
+      - name: backorder_anomaly_count
+        description: Jumlah baris inventory dengan is_backorder_anomaly pada tanggal tersebut
