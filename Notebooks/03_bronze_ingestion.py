@@ -24,7 +24,7 @@ dbutils.widgets.text("catalog", "de_project", "Catalog")
 dbutils.widgets.text("landing_schema", "default", "Schema (landing volume)")
 dbutils.widgets.text("volume", "raw", "Volume name")
 dbutils.widgets.text("bronze_schema", "bronze", "Schema (bronze)")
-
+# /Volumes/de_project/default/raw/products.csv
 CATALOG = dbutils.widgets.get("catalog")
 LANDING_SCHEMA = dbutils.widgets.get("landing_schema")
 VOLUME = dbutils.widgets.get("volume")
@@ -65,7 +65,7 @@ def ingest_bronze(file_name: str, schema: StructType, table_name: str) -> None:
 # COMMAND ----------
 
 products_schema = StructType([
-    StructField("product_id", IntegerType(), False),
+    StructField("product_id", StringType(), False),
     StructField("product_name", StringType(), True),
     StructField("category", StringType(), True),
     StructField("price", DoubleType(), True),
@@ -88,12 +88,11 @@ transactions_schema = StructType([
     StructField("store_id", IntegerType(), True),
     StructField("product_id", IntegerType(), True),
     StructField("transaction_date", DateType(), True),
-    StructField("quantity", DoubleType(), True),
+    StructField("quantity", IntegerType(), True),
     StructField("unit_price", DoubleType(), True),
     StructField("total_amount", DoubleType(), True),
     StructField("payment_method", StringType(), True),
 ])
-
 ingest_bronze("transactions.csv", transactions_schema, "transactions")
 
 # COMMAND ----------
