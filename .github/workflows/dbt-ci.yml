@@ -32,7 +32,7 @@ jobs:
         run: pip install dbt-databricks==1.12.2
 
       - name: dbt deps
-        run: dbt deps
+        run: dbt deps --profiles-dir .
 
       - name: dbt build
-        run: dbt build --target dev
+        run: dbt build --target dev --profiles-dir .
