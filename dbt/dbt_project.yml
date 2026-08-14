@@ -5,10 +5,10 @@ config-version: 2
 
 profile: 'retail_de_mid'   # harus match nama profile di profiles.yml
 
-model-paths: ["dbt/models"]
-seed-paths: ["dbt/seeds"]
-test-paths: ["dbt/tests"]
-macro-paths: ["dbt/macros"]
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
 
 models:
   retail_de_mid:

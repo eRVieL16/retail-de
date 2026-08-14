@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: silver
+    database: de_project
+    schema: silver
+    tables:
+      - name: stg_products
+      - name: stg_transactions
+      - name: stg_stores
+      - name: stg_inventory
