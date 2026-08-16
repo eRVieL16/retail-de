@@ -147,8 +147,9 @@ cp .env.example .env   # fill in Databricks host, token, warehouse path
 # 2. Verify connection
 python test_connection.py
 
-# 3. Generate & upload synthetic data
-python Notebooks/generate_inventory.py
+# 3. Generate synthetic data (stores, products, transactions, then inventory)
+python scripts/generate_data.py
+python scripts/generate_inventory.py
 # then run Notebooks/02_upload_volume.py in Databricks
 
 # 4. Run Bronze -> Silver (as Databricks notebooks)
