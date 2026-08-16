@@ -1,45 +1,43 @@
-# Credentials & secrets
-.env
-.env.*
-!.env.example
-*.pem
-*.key
-.user.yml
+    # Credentials & secrets
+    .env
+    .env.*
+    !.env.example
+    *.pem
+    *.key
+    .user.yml
 
-# Python
-.venv/
-venv/
-__pycache__/
-*.pyc
-*.pyo
-.ipynb_checkpoints/
+    # Python
+    .venv/
+    venv/
+    __pycache__/
+    *.pyc
+    *.pyo
+    .ipynb_checkpoints/
 
-# dbt
-dbt/target/
-dbt/logs/
-dbt/dbt_packages/
-dbt_packages/
-# Databricks / local data artifacts
-bronze_storage/
-*.parquet
-*.delta/
-spark-warehouse/
-metastore_db/
-derby.log
-ENTERPRISE_PLATFORM_GOAL.md
-# OS / editor
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-*.swp
+    # dbt
+    dbt/target/
+    dbt/logs/
+    dbt/dbt_packages/
+    dbt_packages/
+    # Databricks / local data artifacts
+    bronze_storage/
+    *.parquet
+    *.delta/
+    spark-warehouse/
+    metastore_db/
+    derby.log
+    ENTERPRISE_PLATFORM_GOAL.md
+    # OS / editor
+    .DS_Store
+    Thumbs.db
+    .vscode/
+    .idea/
+    *.swp
+    data/raw/*.csv
+    # Jupyter
+    setu awal.ipynb
 
-# Jupyter
-.ipynb_checkpoints/
-setu awal.ipynb
-
-# OTHERS
-logs/
-materi-belajar-databricks-mid.md
-PROGRESS.m
-docs_decision_template.md
+    # OTHERS
+    logs/
+    materi-belajar-databricks-mid.md
+    docs_decision_template.md
